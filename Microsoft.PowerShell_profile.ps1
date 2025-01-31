@@ -1,7 +1,4 @@
 function compact {
-    echo("This command will only compactify a virtual machine if you have \n
-    zerofree'd it. By running zerofree -v on the applicable file systems when
-    they are not mounted, like from another booted VM.")
     param (
         [Parameter(Mandatory = $true)]
         [string]$file,     # File argument (without .vdi extension)
@@ -22,6 +19,7 @@ function compact {
 
     try {
         # Run VBoxManage.exe with the compact command
+        Write-Host "This command will only compactify a virtual machine if you have zerofree'd it. By running zerofree -v on the applicable file systems when they are not mounted, like from another booted VM."
         & "VBoxManage.exe" modifymedium disk --compact "$file.vdi"
 
         # Print success message
@@ -37,17 +35,86 @@ function compact {
     }
 }
 
+function alml {
+    compact("AlmaLinux 9.5")
+}
+
+function arch {
+    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Arch Linux\Arch Linux.vdi"
+}
+
+function calcl {
+    compact("Calculate Linux")
+}
+
+function chiml {
+    compact("Chimera Linux")
+}
+
+function deb12 {
+    compact("Debian 12")
+}
+
 function debunst {
     compact("Debian Unstable")
+}
+
+function exherbo {
+    compact -dir "Exherbo" -file "Exherbo Linux"
+}
+
+function fed41 {
+    compact("Fedora 41")
+}
+
+function gentoo {
+    compact("Gentoo Linux")
+}
+
+function guixsd {
+    compact -dir "Guix System 1.4.0" -file "Guix System"
+}
+
+function mageia9 {
+    compact("Mageia 9")
+}
+
+function nix2411 {
+    compact -dir "NixOS 24.11" -file "NixOS 24.11_1"
 }
 
 function nixunst {
     compact("NixOS unstable")
 }
 
-function nix2411 {
-    compact -dir "NixOS 24.11" -file "NixOS 24.11_1"
+function nutyx {
+    compact("NuTyX 24.10")
 }
+
+function omandr {
+    compact("OpenMandriva Lx Rolling")
+}
+
+function otumb {
+    compact("openSUSE Tumbleweed")
+}
+
+function rhino {
+    compact("Rhino Linux")
+}
+
+function slack15 {
+    compact -dir "Slackware Linux 15.0" -file "Slackware Linux"
+}
+
+function solus {
+    compact("Solus")
+}
+
+function void {
+    compact("Void Linux")
+}
+
 function vboxkstat {
     sc.exe query vboxsup
 }
