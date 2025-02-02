@@ -118,3 +118,7 @@ function void {
 function vboxkstat {
     sc.exe query vboxsup
 }
+
+function franklin {
+    julia -e "using Franklin; serve()"
+}
