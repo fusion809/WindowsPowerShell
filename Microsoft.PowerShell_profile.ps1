@@ -51,6 +51,9 @@ function chiml {
     compact("Chimera Linux")
 }
 
+function chimera {
+    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Chimera Linux\Chimera Linux.vdi"
+}
 function deb12 {
     compact("Debian 12")
 }
@@ -60,7 +63,7 @@ function debunst {
 }
 
 function exherbo {
-    compact -dir "Exherbo" -file "Exherbo Linux"
+    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Exherbo\Exherbo Linux.vdi"
 }
 
 function fed41 {
