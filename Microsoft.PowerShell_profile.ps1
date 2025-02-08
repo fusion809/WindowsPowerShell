@@ -39,13 +39,19 @@ function alml {
     compact("AlmaLinux 9.5")
 }
 
+New-Alias -Name alma -Value alml
+
+New-Alias -Name almalinux -Value alml
+
 function arch {
-    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Arch Linux\Arch Linux.vdi"
+    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Arch Linux\Arch Linux btrfs.vdi"
 }
 
 function calcl {
     compact("Calculate Linux")
 }
+
+New-Alias -Name calculate -Value calcl
 
 function chiml {
     compact("Chimera Linux")
@@ -63,7 +69,8 @@ function debunst {
 }
 
 function exherbo {
-    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Exherbo\Exherbo Linux.vdi"
+#    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Exherbo\Exherbo Linux.vdi"
+    compact -dir "Exherbo" -file "Exherbo Linux"
 }
 
 function fed41 {
@@ -77,6 +84,8 @@ function gentoo {
 function guixsd {
     compact -dir "Guix System 1.4.0" -file "Guix System"
 }
+
+New-Alias -Name guix -Value guixsd
 
 function mageia9 {
     compact("Mageia 9")
@@ -98,17 +107,25 @@ function omandr {
     compact("OpenMandriva Lx Rolling")
 }
 
+New-Alias -Name openmandriva -Value omandr
+
 function otumb {
     compact("openSUSE Tumbleweed")
 }
+
+New-Alias -Name tumbleweed -Value otumb
 
 function rhino {
     compact("Rhino Linux")
 }
 
+New-Alias -Name rhinolinux -Value rhino
+
 function slack15 {
     compact -dir "Slackware Linux 15.0" -file "Slackware Linux"
 }
+
+New-Alias -Name slackware -Value slack15
 
 function solus {
     compact("Solus")
