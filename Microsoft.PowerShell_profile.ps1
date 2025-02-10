@@ -132,7 +132,8 @@ function solus {
 }
 
 function void {
-    compact("Void Linux")
+    #compact("Void Linux")
+    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Void Linux\Void Linux.vdi"
 }
 
 function vboxkstat {
