@@ -96,7 +96,7 @@ function nix2411 {
 }
 
 function nixunst {
-    compact("NixOS unstable")
+    compact("NixOS unstable (30GB root)")
 }
 
 function nutyx {
