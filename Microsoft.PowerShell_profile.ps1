@@ -1,3 +1,5 @@
+$env:PATH += "D:\Program Files\VirtualBox"
+
 function compact {
     param (
         [Parameter(Mandatory = $true)]
@@ -43,6 +45,10 @@ New-Alias -Name alma -Value alml
 
 New-Alias -Name almalinux -Value alml
 
+function alpine {
+    compact("Alpine Linux 3.21.2")
+}
+
 function arch {
     VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Arch Linux\Arch Linux btrfs.vdi"
 }
@@ -58,7 +64,7 @@ function chiml {
 }
 
 function chimera {
-    VBoxManage.exe modifymedium disk --compact "C:\Users\User\VirtualBox VMs\Linux\Chimera Linux\Chimera Linux.vdi"
+    compact -dir "Chimera Linux (Btrfs with snapper)" -file "Chimera Linux (btrfs)"
 }
 function deb12 {
     compact("Debian 12")
